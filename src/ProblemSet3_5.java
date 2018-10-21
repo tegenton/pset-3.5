@@ -50,7 +50,13 @@ public class ProblemSet3_5 {
 	 */
 	
 	public void leapYears(int count) {
-		
+		int[] years = new int[count];
+		for (int i = 0; i < count; i++) {
+			years[i] = 2016 + (4 * i);
+		}
+		System.out.print("The next " + ((count > 1) ? count + " leap years are " : " leap year is "));
+		// TODO: print year/years
+		System.out.println(".");
 	}
 	
 	/**
@@ -63,7 +69,9 @@ public class ProblemSet3_5 {
 	 */
 	
 	public void palindromicNumbers(int number) {
-		
+		boolean palindromic = false;
+		// TODO: test and store in bool palindromic
+		System.out.println(number + " is" + ((palindromic) ? "" : " not") + " a palindromic number");
 	}
 	
 	/**
