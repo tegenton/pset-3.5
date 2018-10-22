@@ -85,7 +85,7 @@ public class ProblemSet3_5 {
 	 * What is the sum of all multiples of @x and @y less than @limit, where @x, @y, and
 	 * @limit are positive integers?
 	 * 
-	 * Print your solution in the following format: "The sum is X."
+	 * Print your solution in the following format: "The sum of all multiples of X and Y less than LIMIT is Z."
 	 * 
 	 * @param limit
 	 */
