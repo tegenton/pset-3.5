@@ -2,10 +2,10 @@
  * INSTRUCTIONS.
  * 
  * The following exercises are, perhaps, more mathematically inclined than previous
- * problem sets. While they might be challenging, they are certainy doable.
+ * problem sets. While they might be challenging, they are certainly doable.
  * 
  * You can (and should!) solve each of them using only the operators, conditional control
- * structures, and iterative control strucurs we've covered. You are not permitted to use
+ * structures, and iterative control strucures we've covered. You are not permitted to use
  * recursive code in your solutions.
  * 
  * Please be mindful of the expected outputs, as your code will be tested against that
