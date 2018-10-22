@@ -86,7 +86,17 @@ public class ProblemSet3_5 {
 	 */
 	
 	public void fibonacci(int n) {
-		
+		int a = 1;
+        int b = 1;
+        int c = 2;
+        int count = n;
+        while (n > 0) {
+           b = a;
+           a = c;
+           c = a + b;
+           n--;
+       }
+       System.out.println("The " + count + "number is " + c + "."); // TODO: add fancy 21st/32nd whatever
 	}
 	
 	/**
