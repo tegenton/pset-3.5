@@ -73,18 +73,14 @@ public class ProblemSet3_5 {
 
     public void leapYears(int count) {
     	// TODO: dont use arrays
-        int[] years = new int[count];
-        for (int i = 1; i <= count; i++) {
-            years[i - 1] = 2016 + (4 * i);
-        }
         System.out.print("The next " + ((count > 1) ? count + " leap years are " : " leap year is "));
         if (count == 1)
-            System.out.print(years[0]);
+            System.out.print("2020");
         else if (count == 2)
-            System.out.print(years[0] + " and " + years[1]);
+            System.out.print(2020 + " and " + 2024);
         else {
             for (int i = 0; i < count; i++) {
-                System.out.print(years[i] + ((count > i + 1) ? ", " : ""));
+                System.out.print((2016 + 4 * (i + 1)) + ((count > i + 1) ? ", " : ""));
                 if (i == count - 2)
                     System.out.print("and ");
             }
