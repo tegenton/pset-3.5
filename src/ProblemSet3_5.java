@@ -21,7 +21,15 @@ public class ProblemSet3_5 {
 
         // test your solutions here
 
-        ps.primes(1, 100);
+        ps.primes(1,1000);
+        
+        ps.leapYears(10);
+        
+        ps.palindromicNumbers(202);
+        
+        ps.fibonacci(5);
+        
+        ps.multiples(2, 3, 20);
     }
 
     /**
@@ -44,20 +52,14 @@ public class ProblemSet3_5 {
         System.out.println("There " + ((count != 1) ? "are " + count + " prime numbers." : "is " + count + " prime number."));
     }
     
-    private boolean isPrime(int n) {
-		if (n < 2) {
-			return false;
-		} else if (n < 4) {
-			return true;
-		}
-		int squareRoot = (int) Math.pow((double) n, 0.5);
-		for (int i = 2; i < squareRoot; i++) {
-			if (n % i == 0) {
-				return false;
-			}
-		}
-		return true;
-	}
+    private boolean isPrime(int num) {
+        if (num < 2) return false;
+        if (num == 2) return true;
+        if (num % 2 == 0) return false;
+        for (int i = 3; i * i <= num; i += 2)
+            if (num % i == 0) return false;
+        return true;
+    }
 
     /**
      * What are the next @count leap years?
@@ -70,17 +72,20 @@ public class ProblemSet3_5 {
      */
 
     public void leapYears(int count) {
+    	// TODO: dont use arrays
         int[] years = new int[count];
-        for (int i = 0; i < count; i++) {
-            years[i] = 2016 + (4 * i);
+        for (int i = 1; i <= count; i++) {
+            years[i - 1] = 2016 + (4 * i);
         }
         System.out.print("The next " + ((count > 1) ? count + " leap years are " : " leap year is "));
         if (count == 1)
             System.out.print(years[0]);
+        else if (count == 2)
+            System.out.print(years[0] + " and " + years[1]);
         else {
             for (int i = 0; i < count; i++) {
-                System.out.print(years[i] + ((count > 2) ? ", " : " "));
-                if (i == count - 1) 
+                System.out.print(years[i] + ((count > i + 1) ? ", " : ""));
+                if (i == count - 2)
                     System.out.print("and ");
             }
         }
@@ -101,7 +106,7 @@ public class ProblemSet3_5 {
         // TODO: use % and / to do with an int
         String palindrome = number + "";
         for (int i = 0; i < palindrome.length() / 2; i++) {
-            if (palindrome.charAt(i) == palindrome.charAt(palindrome.length() - i))
+            if (palindrome.charAt(i) == palindrome.charAt(palindrome.length() -  (i + 1)))
                 continue;
             else 
                 palindromic = false;
@@ -121,17 +126,34 @@ public class ProblemSet3_5 {
      */
 
     public void fibonacci(int n) {
-        int a = 1;
-        int b = 1;
-        int c = 2;
-        int count = n;
-        while (n > 0) {
-            b = a;
-            a = c;
-            c = a + b;
-            n--;
+    	
+    	int previous = 1;
+    	int current = 1;
+    	int next;
+    	int count = n - 2;
+    	
+    	while (count > 0) {
+    		next = previous + current;
+    		previous = current;
+    		current = next;
+    		count--;
+    	}
+    	
+        String indicator;
+        switch ((n / 10 == 1) ? n : n % 10) {
+        	case 1:
+        		indicator = "st";
+        		break;
+        	case 2:
+        		indicator = "nd";
+        		break;
+        	case 3:
+        		indicator = "rd";
+        		break;
+        	default:
+        		indicator = "th";
         }
-        System.out.println("The " + count + "number is " + c + "."); // TODO: add fancy 21st/32nd whatever
+        System.out.println("The " + n + indicator + " number is " + current + "."); 
     }
 
     /**
@@ -144,6 +166,15 @@ public class ProblemSet3_5 {
      */
 
     public void multiples(int x, int y, int limit) {
-    	
+	    int sum = 0;
+	    for (int i = 0; i < limit / x; i++) {
+	    	sum += x * i;
+	    }
+	    for (int i = 0; i < limit / y; i++) {
+	    	if (i % x != 0) {
+	    		sum += y * i;
+	    	}
+	    }
+	    System.out.println("The sum is " + sum + ".");
     }
 }
