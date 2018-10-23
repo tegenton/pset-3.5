@@ -36,7 +36,11 @@ public class ProblemSet3_5 {
      */
 
     public void primes(int start, int end) {
-
+        int count = 0;
+        for (; start < end; start++) {
+            // TODO: determine if prime
+        }
+        System.out.println("There " + ((count > 1) ? "are " + count + " prime numbers." : "is " + count + " prime number."));
     }
 
     /**
