@@ -40,7 +40,7 @@ public class ProblemSet3_5 {
         for (; start < end; start++) {
             // TODO: determine if prime
         }
-        System.out.println("There " + ((count > 1) ? "are " + count + " prime numbers." : "is " + count + " prime number."));
+        System.out.println("There " + ((count != 1) ? "are " + count + " prime numbers." : "is " + count + " prime number."));
     }
 
     /**
