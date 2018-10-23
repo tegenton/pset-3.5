@@ -59,7 +59,15 @@ public class ProblemSet3_5 {
             years[i] = 2016 + (4 * i);
         }
         System.out.print("The next " + ((count > 1) ? count + " leap years are " : " leap year is "));
-        // TODO: print year/years
+        if (count == 1)
+            System.out.print(years[0]);
+        else {
+            for (int i = 0; i < count; i++) {
+                System.out.print(years[i] + ((count > 2) ? ", " : " "));
+                if (i == count - 1) 
+                    System.out.print("and ");
+            }
+        }
         System.out.println(".");
     }
 
