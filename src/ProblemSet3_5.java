@@ -81,8 +81,15 @@ public class ProblemSet3_5 {
      */
 
     public void palindromicNumbers(int number) {
-        boolean palindromic = false;
+        boolean palindromic = true;
         // TODO: test and store in bool palindromic
+        String palindrome = "" + number;
+        for (int i = 0; i < palindrome.length() / 2; i++) {
+            if (palindrome.charAt(i) == palindrome.charAt(palindrome.length() - i))
+                continue;
+            else 
+                palindromic = false;
+        }
         System.out.println(number + " is" + ((palindromic) ? "" : " not") + " a palindromic number");
     }
 
