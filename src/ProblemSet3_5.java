@@ -21,7 +21,7 @@ public class ProblemSet3_5 {
 
         // test your solutions here
 
-        ps.primes(1, 1000);
+        ps.primes(1, 100);
     }
 
     /**
@@ -38,10 +38,26 @@ public class ProblemSet3_5 {
     public void primes(int start, int end) {
         int count = 0;
         for (; start < end; start++) {
-            // TODO: determine if prime
+            if (isPrime(start))
+            	count++;
         }
         System.out.println("There " + ((count != 1) ? "are " + count + " prime numbers." : "is " + count + " prime number."));
     }
+    
+    private boolean isPrime(int n) {
+		if (n < 2) {
+			return false;
+		} else if (n < 4) {
+			return true;
+		}
+		int squareRoot = (int) Math.pow((double) n, 0.5);
+		for (int i = 2; i < squareRoot; i++) {
+			if (n % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
 
     /**
      * What are the next @count leap years?
@@ -82,8 +98,8 @@ public class ProblemSet3_5 {
 
     public void palindromicNumbers(int number) {
         boolean palindromic = true;
-        // TODO: test and store in bool palindromic
-        String palindrome = "" + number;
+        // TODO: use % and / to do with an int
+        String palindrome = number + "";
         for (int i = 0; i < palindrome.length() / 2; i++) {
             if (palindrome.charAt(i) == palindrome.charAt(palindrome.length() - i))
                 continue;
@@ -128,6 +144,6 @@ public class ProblemSet3_5 {
      */
 
     public void multiples(int x, int y, int limit) {
-
+    	
     }
 }
