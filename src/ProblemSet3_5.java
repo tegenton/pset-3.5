@@ -26,9 +26,9 @@ public class ProblemSet3_5 {
 		ProblemSet3_5 ps = new ProblemSet3_5();
 		
 		ps.testPrimes();
-		ps.testLeapYears();
-		ps.testPalindromicNumbers();
-		ps.testFibonacci();
+		//ps.testLeapYears();
+		//ps.testPalindromicNumbers();
+		//ps.testFibonacci();
 		//ps.testMultiples();
 	}
 	
