@@ -257,7 +257,7 @@ public class ProblemSet3_5 {
 		System.out.println("------------------------------------------------------------------");
 		
 		System.out.print("multiples(2, 4, 100000), expected : The sum of all multiples of 2 and 4 less than 100000 is 2499950000.\n");
-		System.out.print("multiples(2, 4, 10000), actual   : ");
+		System.out.print("multiples(2, 4, 100000), actual   : ");
 		multiples(2, 4, 100000);
 		System.out.println("------------------------------------------------------------------");
 		
