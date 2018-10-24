@@ -70,16 +70,17 @@ public class ProblemSet3_5 {
      *
      * @param count
      */
+    private static final int lastLeapYear = 2016;
 
     public void leapYears(int count) {
         System.out.print("The next " + ((count > 1) ? count + " leap years are " : " leap year is "));
         if (count == 1)
-            System.out.print("2020");
+            System.out.print(this.lastLeapYear + 4);
         else if (count == 2)
-            System.out.print(2020 + " and " + 2024);
+            System.out.print((this.lastLeapYear + 4) + " and " + (lastLeapYear + 8));
         else {
             for (int i = 0; i < count; i++) {
-                System.out.print((2016 + 4 * (i + 1)) + ((count > i + 1) ? ", " : ""));
+                System.out.print((this.lastLeapYear + 4 * (i + 1)) + ((count > i + 1) ? ", " : ""));
                 if (i == count - 2)
                     System.out.print("and ");
             }
