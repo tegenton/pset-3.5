@@ -68,17 +68,22 @@ public class ProblemSet3_5 {
 
 	public void leapYears(int count) {
 
-		if (count < 1)
+		if (count < 1) {
 			System.out.println("I don't know how to compute the next " + count +" leap years...");
-
+			return;
+		}
+		int leapYear = this.lastLeapYear;
 		System.out.print("The next " + ((count > 1) ? count + " leap years are " : " leap year is "));
 		if (count == 1)
-			System.out.print(this.lastLeapYear + 4);
+			System.out.print(leapYear + 4);
 		else if (count == 2)
-			System.out.print((this.lastLeapYear + 4) + " and " + (lastLeapYear + 8));
+			System.out.print((leapYear + 4) + " and " + (leapYear + 8));
 		else {
 			for (int i = 0; i < count; i++) {
-				System.out.print((this.lastLeapYear + 4 * (i + 1)) + ((count > i + 1) ? ", " : ""));
+				leapYear += 4;
+				if (leapYear % 100 == 0 && leapYear % 400 != 0)
+					leapYear += 4;
+				System.out.print(leapYear + ((count > i + 1) ? ", " : ""));
 				if (i == count - 2)
 					System.out.print("and ");
 			}
@@ -239,7 +244,7 @@ public class ProblemSet3_5 {
 
 		System.out.print("leapYears(26), expected : The next 26 leap years are 2020, 2024, 2028, 2032, 2036, 2040, 2044, 2048, 2052, 2056, 2060, 2064, 2068, 2072, 2076, 2080, 2084, 2088, 2092, 2096, 2104, 2108, 2112, 2116, 2120, and 2124.\n");
 		System.out.print("leapYears(26), actual   : ");
-		leapYears(26);
+		leapYears(21);
 		System.out.println("------------------------------------------------------------------");
 	}
 
