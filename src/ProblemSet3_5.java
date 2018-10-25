@@ -244,7 +244,7 @@ public class ProblemSet3_5 {
 
 		System.out.print("leapYears(26), expected : The next 26 leap years are 2020, 2024, 2028, 2032, 2036, 2040, 2044, 2048, 2052, 2056, 2060, 2064, 2068, 2072, 2076, 2080, 2084, 2088, 2092, 2096, 2104, 2108, 2112, 2116, 2120, and 2124.\n");
 		System.out.print("leapYears(26), actual   : ");
-		leapYears(21);
+		leapYears(26);
 		System.out.println("------------------------------------------------------------------");
 	}
 
