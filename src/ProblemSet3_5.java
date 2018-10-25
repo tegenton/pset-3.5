@@ -72,12 +72,12 @@ public class ProblemSet3_5 {
 			System.out.println("I don't know how to compute the next " + count +" leap years...");
 			return;
 		}
-		int leapYear = this.lastLeapYear;
+		int leapYear = (this.lastLeapYear + 4 % 100 == 0 && this.lastLeapYear + 4 % 400 != 0) ? this.lastLeapYear + 4 : this.lastLeapYear;
 		System.out.print("The next " + ((count > 1) ? count + " leap years are " : " leap year is "));
 		if (count == 1)
 			System.out.print(leapYear + 4);
 		else if (count == 2)
-			System.out.print((leapYear + 4) + " and " + (leapYear + 8));
+			System.out.print((leapYear + 4) + " and " + (leapYear + (((leapYear + 8) % 100 == 0 && (leapYear + 8) % 400 != 0) ? 12 : 8)));
 		else {
 			for (int i = 0; i < count; i++) {
 				leapYear += 4;
